@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>标题</title>
+    <title>测试报告</title>
     <meta name="generator" content="HTMLTestRunner 0.8.2"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     
@@ -188,12 +188,12 @@ function showOutput(id, name) {
 --></script>
 
 <div class='heading'>
-<h1>标题</h1>
-<p class='attribute'><strong>Start Time:</strong> 2020-03-20 17:53:14</p>
-<p class='attribute'><strong>Duration:</strong> 0:00:43.415446</p>
-<p class='attribute'><strong>Status:</strong> Pass 1</p>
+<h1>测试报告</h1>
+<p class='attribute'><strong>Start Time:</strong> 2020-03-23 17:18:25</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:36.484979</p>
+<p class='attribute'><strong>Status:</strong> Error 1</p>
 
-<p class='description'>描述</p>
+<p class='description'>测试报告描述</p>
 </div>
 
 
@@ -221,26 +221,53 @@ function showOutput(id, name) {
     <td>View</td>
 </tr>
 
-<tr class='passClass'>
+<tr class='errorClass'>
     <td>zt_selenium_test.TestZt</td>
     <td>1</td>
+    <td>0</td>
+    <td>0</td>
     <td>1</td>
-    <td>0</td>
-    <td>0</td>
     <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
 </tr>
 
-<tr id='pt1.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_go_warning: 首页-点击报警跳转报警页面</div></td>
-    <td colspan='5' align='center'>pass</td>
+<tr id='ft1.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_setting_day: 设置-系统设置-修改上线天数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        error</a>
+
+    <div id='div_ft1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.1: Traceback (most recent call last):
+  File "E:\py_work\Practices\hr_selenium0318\ZT_TestExample\zt_selenium_test.py", line 64, in test_setting_day
+    driver.find_element_by_xpath("//*[@id='root']/section/section/header/div/div[3]").click()
+NameError: name 'driver' is not defined
+Traceback (most recent call last):
+  File "E:\py_work\Practices\hr_selenium0318\ZT_TestExample\zt_selenium_test.py", line 64, in test_setting_day
+    driver.find_element_by_xpath("//*[@id='root']/section/section/header/div/div[3]").click()
+NameError: name 'driver' is not defined
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
 </tr>
 
 <tr id='total_row'>
     <td>Total</td>
     <td>1</td>
+    <td>0</td>
+    <td>0</td>
     <td>1</td>
-    <td>0</td>
-    <td>0</td>
     <td>&nbsp;</td>
 </tr>
 </table>
