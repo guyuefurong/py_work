@@ -7,6 +7,9 @@ from Practices.hr_selenium0318.ZT_TestExample.zt_test.zt_selenium_test import Te
 from selenium import webdriver
 import unittest
 import time
+from ddt import ddt,data,unpack
+
+
 
 
 class TestGongGao(TestZt):
@@ -44,7 +47,7 @@ class TestGongGao(TestZt):
         self.driver.find_element_by_xpath('//*[@id="Title"]').send_keys("2020测试删除1")  # 输入名称
         time.sleep(2)
         self.driver.find_element_by_xpath('//*[@id="DisplayDate"]/div/i').click()  # 点击日历
-        self.driver.find_element_by_xpath("//a[@title='下个月 (翻页下键)']").click()  # 日历翻页
+        # self.driver.find_element_by_xpath("//a[@title='下个月 (翻页下键)']").click()  # 日历翻页
         time.sleep(2)
         self.driver.find_element_by_xpath("//td[@title='2020年4月1日']").click()  # 输入时间
         doc = "这是通告内容"
@@ -176,7 +179,12 @@ class TestYongHu(TestZt):
         :return:
         '''
         #查询要删除的账号记录
-        #点击删除
+        time.sleep(2)
+        self.driver.find_element_by_xpath('//input[@placeholder="请输入用户账号"]').send_keys('test1')     # 定位账户搜索框并输入 test1
+        time.sleep(3)
+        self.driver.find_element_by_xpath("//span[text()='查询']/parent::button").click()     # 点击查询按钮
+        #点击编辑
+        self.driver.find_element_by_link_text("编辑").click()
         #点击确定
         #断言
 

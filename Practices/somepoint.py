@@ -164,6 +164,78 @@ def get_word(b,/,e,*,c,d,):
 
 
 
+# 9.类/函数/对象
+# 解决接口键关联性问题，如下个请求需要用到上个请求的数据，cookies等
+# method1：使用unittest 框架中初始化函数 setUp() ，每次执行用例前执行获取cookies
+# method2：使用全局变量，设置全局变量初始值，并修改初始值，每次使用时都需声明全局变量（比较重复）
+# method3：使用映射，模块之外新建类函数，使用时导入函数，通过调用修改/获取/删除等方法来使用
+
+
+# 10.python 对表格实现读写操作（可进行参数化运用）
+#   方法一：openpyxl 模块实现读写（修改）
+from openpyxl import Workbook
+from openpyxl import load_workbook
+# from openpyxl.writer.excel import ExcelWriter
+
+# '''
+# 拷贝 sheet
+# '''
+# # 读取 somepoint_date.xlsx
+# wb = load_workbook(u"somepoint_data.xlsx")
+# # 获取当前的 sheet
+# source = wb.active
+# # 拷贝 sheet
+# target = wb.copy_worksheet(source)
+# # 给 sheet 重命名
+# target.title = 'copy'
+# # 保存
+# wb.save(u"somepoint_data.xlsx")
+#
+#
+# '''
+# 修改值
+# '''
+# wb = load_workbook(u"somepoint_data.xlsx")
+# # 获取所有 sheet 名称
+# sheetnames =wb.sheetnames     #获取工作表所有表单名称，get_sheet_names函数python3已弃用
+# # 获取第一个 sheet
+# sheet = wb[sheetnames[0]]     #sheetnames[0]表示按照索引取第一张表单
+# # A 列求和，并赋值到 D1
+# # sheet["D1"] = "=SUM(A:A)"
+# # 打印 A2 的值
+# print(sheet['A2'].value)
+# # 打印位于第6行，第3列的值
+# print(sheet.cell(row=2,column=2).value)
+# # 赋值给 A1
+# sheet['A1'] = '47'
+# # 保存
+# wb.save("somepoint_data.xlsx")
+#
+#
+# '''
+# 创建 excel
+# '''
+# # 创建一个 excel
+# wb = Workbook() #创建的表格不能再此处传参命名，只能再保存时命名
+# # 获取当前的 sheet
+# sheet = wb.active
+# # 赋值 A1 为 4
+# sheet['A1'] = 4
+# # 保存
+# wb.save("create.xlsx")
+
+
+'''
+插入空行
+'''
+# 读取 output.xlsx
+wb = load_workbook('output.xlsx')
+sheet = wb.copy_worksheet(wb.active)
+sheet.title = 'copy'
+# 在第二行(idx)上方插入两个(amount)空行
+sheet.insert_rows(idx=2, amount=2)
+# 保存
+wb.save('insert.xlsx')
 
 
 
@@ -172,8 +244,15 @@ def get_word(b,/,e,*,c,d,):
 
 
 
+    # print(1)
+    # sheet1=wb.get_sheet_by_name(name)   #获取表单名称
 
 
+
+#   方法二：xlrd (xlsx表格read） 和 xlwt （xlsx表格write）模块实现
+#   方法三：xlsxwrite 模块实现
+
+# rw_data("somepoint_data.xlsx","data")
 
 
 
