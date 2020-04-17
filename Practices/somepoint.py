@@ -229,13 +229,13 @@ from openpyxl import load_workbook
 插入空行
 '''
 # 读取 output.xlsx
-wb = load_workbook('output.xlsx')
+wb = load_workbook('somepoint_data.xlsx')
 sheet = wb.copy_worksheet(wb.active)
 sheet.title = 'copy'
 # 在第二行(idx)上方插入两个(amount)空行
 sheet.insert_rows(idx=2, amount=2)
 # 保存
-wb.save('insert.xlsx')
+wb.save('somepoint_data.xlsx')
 
 
 
