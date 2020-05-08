@@ -16,6 +16,7 @@
 # list=[1,2,3,4]
 # list.reverse()
 # print(len(list))
+# print(list)
 
 
 
@@ -26,6 +27,7 @@
 # zip_1=zip(list_ziduan,list) #zip()函数用于可迭代的对象作为参数，将对象中对应的元素打包成 ——》元组，返回元组组成的列表；
 # 如果元素位数不一致，则返回列表长度与最短的对象相同，利用 * 号操作符，可以将元组解压为列表。
 # list_ziduan=["num1","mum2","mum3"]
+# list=[1,2,3]
 # zip_1=zip(list_ziduan,list)
 # print(dict(zip_1)) #dict([列表1-Key，列表2-Value]) 转换为字典
 
@@ -59,6 +61,18 @@ def get_word(b,/,e,*,c,d,):
     # get_args(1, 2, 3, 4, 5, "哈哈", "lala")
     # get_kwargs(mo=1, lala=2)
     # get_word(1, 0, c=2, d=3)
+
+
+dict={"1":1,"2":2}
+for key,value in dict.items():
+    print(key,":",value)
+
+list=[1,2]
+list_1=[33,44]
+dic.fromkeys(list,list_1)
+print(dic)
+
+
 
 
 
